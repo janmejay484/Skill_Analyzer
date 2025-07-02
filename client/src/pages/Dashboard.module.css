@@ -1,0 +1,179 @@
+/* ---------------------- */
+/* Hero (re-used from Home) */
+/* ---------------------- */
+.hero {
+  position: relative;
+  background-image: url('/heroimage.png');  /* swap in your own image */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heroContent {
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* ---------------------- */
+/* Features Section */
+/* ---------------------- */
+.featuresSection {
+  padding: 3rem 1rem;
+  background-color: #0d1117;
+  text-align: center;
+  color: #c9d1d9;
+}
+
+.featuresTitle {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.featuresSubtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: #161b22;
+  border-radius: 12px;
+  padding: 1.8rem 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------------------- */
+/* Dashboard Quick Actions */
+/* ---------------------- */
+.dashboard {
+  padding: 2.5rem 1rem;
+  background-color: #0d1117;
+  display: flex;
+  justify-content: center;
+}
+
+.innerCard {
+  background-color: #161b22;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  text-align: center;
+  color: #c9d1d9;
+  max-width: 360px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* Primary CTA */
+.cta {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.cta:hover {
+  background-color: #2563eb;
+}
+
+/* Secondary / outline */
+.logout {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #8b949e;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.logout:hover {
+  background-color: #21262d;
+  color: #ffffff;
+}
+
+/* Loading placeholder */
+.loading {
+  text-align: center;
+  margin: 3rem 0;
+  color: #c9d1d9;
+  font-size: 1.1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .heroTitle { font-size: 1.75rem; }
+  .featuresTitle { font-size: 1.5rem; }
+  .featuresSubtitle { font-size: 0.95rem; }
+  .cardGrid { gap: 1rem; }
+  .innerCard { padding: 1.5rem; }
+  .title { font-size: 1.25rem; }
+}
+.saveBtn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}

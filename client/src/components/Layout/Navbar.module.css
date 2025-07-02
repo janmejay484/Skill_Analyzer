@@ -1,0 +1,178 @@
+/* Navbar.module.css */
+
+/* ── Layout ───────────────────────────────────────────────────── */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #161b22;
+  padding: 0 1.5rem;
+  height: 64px;
+  position: relative;
+  z-index: 100;
+  font-family: sans-serif;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logoIcon {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.logoText {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Desktop nav links */
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.navLink {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  margin-left: 850px;
+}
+.navLink:hover {
+  color: #ffffff;
+}
+
+/* Call-to-action button */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ctaButton {
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+.ctaButton:hover {
+  background-color: #2563eb;
+}
+
+/* Hamburger icon (mobile only) */
+.menuIcon {
+  display: none;
+  color: #ffffff;
+  font-size: 1.75rem;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 300;
+}
+
+/* ── Sidebar (mobile) ─────────────────────────────────────────── */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: #161b22;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 200;
+}
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+}
+.sidebarNavLink {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.sidebarNavLink:hover {
+  color: #3b82f6;
+}
+
+.sidebarActions {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+/* Overlay behind sidebar */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 150;
+  display: none;
+}
+.sidebarOverlayOpen {
+  display: block;
+}
+
+/* ── Responsive Breakpoints ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Hide desktop nav & CTA, show hamburger */
+  .navList,
+  .actions {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+
+  /* Slightly narrower sidebar */
+  .sidebar {
+    width: 200px;
+  }
+  .sidebarNavList {
+    padding-left: 1rem;
+  }
+  .sidebarNavLink {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  .logoText {
+    font-size: 1rem;
+  }
+  .ctaButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
