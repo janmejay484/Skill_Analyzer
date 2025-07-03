@@ -1,0 +1,148 @@
+/* client/src/pages/NotFound.module.css */
+
+.wrapper {
+  position: relative;
+  background-color: #161b22;
+  color: #ffffff;
+  min-height: calc(100vh - 60px); /* adjust if your Navbar is 60px tall */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.wrapper::before {
+  width: 300px; height: 300px;
+  top: -100px; left: -100px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.wrapper::after {
+  width: 250px; height: 250px;
+  bottom: -80px; right: -80px;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+.illustration {
+  margin-bottom: 1rem;
+}
+
+.errorCode {
+  font-size: 6rem;
+  font-weight: bold;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #c9d1d9;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive styles for NotFound page */
+@media (max-width: 700px) {
+  .wrapper::before {
+    width: 180px;
+    height: 180px;
+    top: -60px;
+    left: -60px;
+  }
+  .wrapper::after {
+    width: 140px;
+    height: 140px;
+    bottom: -40px;
+    right: -40px;
+  }
+  .errorCode {
+    font-size: 4rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    font-size: 0.98rem;
+    max-width: 90vw;
+  }
+  .button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 1rem 0.3rem;
+    min-height: 80vh;
+  }
+  .errorCode {
+    font-size: 2.5rem;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+  .subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+  .button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

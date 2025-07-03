@@ -7,7 +7,9 @@ import Dashboard         from './pages/Dashboard';
 import AnalysisFormPage  from './pages/AnalysisFormPage';
 import AnalysisResultPage from './pages/AnalysisResultPage';
 import PrivateRoute      from './components/Layout/PrivateRoute';
-
+import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
+import Feature from './pages/Feature';
 export default function App() {
   return (
     <Routes>
@@ -23,7 +25,9 @@ export default function App() {
       <Route path="/dashboard/result" element={
         <PrivateRoute><AnalysisResultPage/></PrivateRoute>
       }/>
-      <Route path="*" element={<p>404 Not Found</p>} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/features" element={<Feature />} />
+     <Route path="*" element={<NotFound/>} />
     </Routes>
   );
 }

@@ -19,8 +19,7 @@ export default function Home() {
             Sync Your Skills, Shape Your Future
           </h1>
           <p className={styles.heroSubtitle}>
-            Unlock your potential with SkillSync. Connect with experts, learn new
-            skills, and build the career you’ve always dreamed of.
+     SkillSync analyzes your LinkedIn, GitHub & resume to craft a personalized career roadmap—so you know exactly which roles to target, the skills to build, and the projects to showcase.
           </p>
           <button
             className={styles.cta}

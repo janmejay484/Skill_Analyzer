@@ -18,9 +18,8 @@ const Navbar = () => {
       {/* Desktop Navigation Links */}
       <ul className={styles.navList}>
         <li><Link to="/" className={styles.navLink}>Home</Link></li>
-        {/* <li><Link to="/features" className={styles.navLink}>Features</Link></li>
-        <li><Link to="/testimonials" className={styles.navLink}>Testimonials</Link></li>
-        <li><Link to="/contact" className={styles.navLink}>Contact</Link></li> */}
+        <li><Link to="/features" className={styles.navLink}>Features</Link></li>
+        <li><Link to="/contact" className={styles.navLink}>Contact</Link></li>
       </ul>
 
       {/* Desktop CTA */}
@@ -41,9 +40,8 @@ const Navbar = () => {
         />
         <ul className={styles.sidebarNavList}>
           <li><Link to="/" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Home</Link></li>
-          {/* <li><Link to="/features" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Features</Link></li>
-          <li><Link to="/testimonials" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Testimonials</Link></li>
-          <li><Link to="/contact" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Contact</Link></li> */}
+          <li><Link to="/features" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Features</Link></li>
+          <li><Link to="/contact" className={styles.sidebarNavLink} onClick={() => setSidebarOpen(false)}>Contact</Link></li>
         </ul>
         <div className={styles.sidebarActions}>
           <Link to="/register" className={styles.ctaButton} onClick={() => setSidebarOpen(false)}>

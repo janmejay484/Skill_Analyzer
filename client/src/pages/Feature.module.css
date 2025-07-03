@@ -1,0 +1,71 @@
+.featureSection {
+  background-color: #161b22;
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 0.25rem;
+  background: #3b82f6;
+  margin: 0.5rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.cardsGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.card {
+  background-color: #0d1117;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.future {
+  opacity: 0.85;
+  border: 1px dashed #444;
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .featureSection {
+    padding: 2rem 0.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  .cardsGrid {
+    gap: 1.2rem;
+  }
+}

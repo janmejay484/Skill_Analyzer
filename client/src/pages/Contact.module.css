@@ -1,0 +1,87 @@
+.container {
+  background-color: #161b22;
+  min-height: calc(100vh - 112px); /* header + footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: #0d1117;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid #3b82f6;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.bio {
+  color: #c9d1d9;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social a {
+  font-size: 1.5rem;
+  color: #c9d1d9;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social a:hover {
+  color: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* keyframes (if not already in your global CSS) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweak */
+@media (max-width: 400px) {
+  .card {
+    padding: 2rem 1rem;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  .name {
+    font-size: 1.5rem;
+  }
+  .social a {
+    font-size: 1.3rem;
+  }
+}
