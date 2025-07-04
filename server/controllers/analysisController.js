@@ -47,6 +47,7 @@ Please suggest:
 2) Key skill gaps & how to fill them.
 3) Recommended resources or certifications.
 4) Mini-projects or portfolio ideas.
+5) Chances of getting selected based on resume and current compitions.
 `;
 
     // 6) Call the GitHub-Models chat/completions endpoint

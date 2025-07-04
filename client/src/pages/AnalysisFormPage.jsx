@@ -160,7 +160,7 @@ export default function ProfileFormPage() {
           <option value="Finance">Finance</option>
         </select>
 
-        <label>Resume (PDF / DOCX)</label>
+        <label>Resume (PDF)</label>
         <input
           type="file"
           accept=".pdf,.doc,.docx"
