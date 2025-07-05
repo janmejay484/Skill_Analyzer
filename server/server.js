@@ -15,7 +15,7 @@ const app = express();
 
 // Allow React (Vite) frontend to call us
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://skill-analyzer-frontend.onrender.com/',
   credentials: true,
 }));
 
