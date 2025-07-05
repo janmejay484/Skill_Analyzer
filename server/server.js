@@ -14,9 +14,15 @@ dotenv.config();
 const app = express();
 
 // Allow React (Vite) frontend to call us
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://skill-analyzer-frontend.onrender.com'
+];
+
 app.use(cors({
-  origin: 'https://skill-analyzer-frontend.onrender.com/',
-  credentials: true,
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
 
 // Serve uploaded files (pictures, resumes) statically
