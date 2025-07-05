@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home              from './pages/Home';
 import Register          from './components/Auth/Register';
 import Login             from './components/Auth/Login';
-import Dashboard         from './pages/Dashboard';
+import Dashboard         from './pages/dashboard';
 import AnalysisFormPage  from './pages/AnalysisFormPage';
 import AnalysisResultPage from './pages/AnalysisResultPage';
 import PrivateRoute      from './components/Layout/PrivateRoute';
