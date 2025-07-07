@@ -40,12 +40,24 @@ export default function ProfileFormPage() {
   };
 
   const handleAnalyze = async () => {
+    // Simple validation for all fields
+    if (
+      !form.linkedIn.trim() ||
+      !form.github.trim() ||
+      !form.experienceYears.trim() ||
+      !form.careerField.trim() ||
+      !resume
+    ) {
+      alert('Please fill in all fields and upload your resume before analyzing.');
+      return;
+    }
+
     try {
       setLoading(true);
 
       // Build form data
       const fd = new FormData();
-      Object.entries(form).forEach(([k,v]) => fd.append(k, v));
+      Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       if (resume) fd.append('resume', resume);
 
       // Save + analyze
