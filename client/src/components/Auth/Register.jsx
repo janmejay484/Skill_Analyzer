@@ -1,14 +1,15 @@
 // client/src/components/Auth/Register.jsx
 import React, { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';  // ← useAuth
+import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import styles from './Auth.module.css';
 import Navbar from '../Layout/Navbar';
-// import API from '../../services/api';
+
 export default function Register() {
   const { register } = useAuth();
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = e =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -16,11 +17,14 @@ export default function Register() {
   const handleSubmit = async e => {
     e.preventDefault();
     setError('');
+    setLoading(true);
     try {
       await register(form.name, form.email, form.password);
       // context.register handles token, user state, and navigation
     } catch (err) {
       setError(err.response?.data?.msg || 'Registration failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,6 +36,12 @@ export default function Register() {
           <h2 className={styles.formTitle}>Create an Account</h2>
 
           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+
+          {loading && (
+            <div className={styles.overlay}>
+              <div className={styles.spinner} />
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
@@ -73,6 +83,7 @@ export default function Register() {
             <button
               type="submit"
               className={`${styles.btn} ${styles.btnPrimary}`}
+              disabled={loading}
             >
               Register
             </button>

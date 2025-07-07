@@ -1,14 +1,15 @@
 // client/src/components/Auth/Login.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';     // ← import hook
+import { useAuth } from '../../contexts/AuthContext';
 import styles from './Auth.module.css';
 import Navbar from '../Layout/Navbar';
-//  import API from '../../services/api';
+
 export default function Login() {
-  const { login } = useAuth();        // ← grab login() from context
+  const { login } = useAuth();
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = e =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -16,11 +17,14 @@ export default function Login() {
   const handleSubmit = async e => {
     e.preventDefault();
     setError('');
+    setLoading(true);
     try {
-      await login(form.email, form.password);  // ← call context.login
+      await login(form.email, form.password);
       // context.login handles token, user state, and navigation for you
     } catch (err) {
       setError(err.response?.data?.msg || 'Login failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,6 +36,12 @@ export default function Login() {
           <h2 className={styles.formTitle}>Welcome Back</h2>
 
           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+
+          {loading && (
+            <div className={styles.overlay}>
+              <div className={styles.spinner} />
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
@@ -61,6 +71,7 @@ export default function Login() {
             <button
               type="submit"
               className={`${styles.btn} ${styles.btnPrimary}`}
+              disabled={loading}
             >
               Log In
             </button>
